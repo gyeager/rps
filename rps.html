@@ -1,0 +1,74 @@
+<html>
+    <script>
+
+        function computerPlay () {
+            const computerChoice = ['ROCK','PAPER','SCISSORS'];
+            return computerChoice[Math.floor(Math.random()*computerChoice.length)];
+        }
+
+        function playRound (playerSelection, computerSelection) {
+            psu = playerSelection.toUpperCase();
+
+            if (computerSelection === 'ROCK') {
+                switch (psu) {
+                    case 'ROCK':
+                        return "Rock ties with rock!"
+                        break;
+                    case 'PAPER':
+                        return "Paper beats rock. You win!"
+                        break;
+                    case 'SCISSORS':
+                        return "Rock beats scissors. You lose!"
+                        break;
+                    default:
+                        return "Thats not a valid answer"
+                        break;
+                }
+            }
+
+            if (computerSelection === 'PAPER') {
+                switch (psu) {
+                    case 'ROCK':
+                        return "Paper beats rock. You lose!"
+                        break;
+                    case 'PAPER':
+                        return "Paper ties with paper."
+                        break;
+                    case 'SCISSORS':
+                        return "Scissors beats paper. You win!"
+                        break;
+                    default:
+                        return "That's not a valid answer."
+                        break;
+                }
+            }
+
+            if (computerSelection === 'SCISSORS') {
+                switch (psu) {
+                    case 'ROCK':
+                        return "Rock beats scissors. You win!"
+                        break;
+                    case 'PAPER':
+                        return "Scissors beats paper. You lose!"
+                        break;
+                    case 'SCISSORS':
+                        return "Scissors ties with scissors."
+                        break;
+                    default:
+                        return "That's not a valid answer."
+                        break;
+                }
+            }
+        }
+
+        function main() {
+            let input = prompt("Enter rock, paper, or scissors:");
+
+            console.log(playRound(input, computerPlay()));
+        }
+
+        main();
+
+
+    </script>
+</html>
