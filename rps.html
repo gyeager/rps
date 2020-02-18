@@ -6,6 +6,10 @@
             return computerChoice[Math.floor(Math.random()*computerChoice.length)];
         }
 
+        function receiveInput() {
+            return prompt("Enter rock, paper, or scissors:");
+        }
+
         function playRound (playerSelection, computerSelection) {
             psu = playerSelection.toUpperCase();
 
@@ -62,9 +66,30 @@
         }
 
         function main() {
-            let input = prompt("Enter rock, paper, or scissors:");
+            var pscore = 0;
+            var cscore = 0;
+            var round;
 
-            console.log(playRound(input, computerPlay()));
+            for (i = 0; i<5; i++) {
+                round = playRound(receiveInput(), computerPlay());
+                console.log(round);
+                
+                if (round.includes('win')) {
+                    pscore += 1;
+                }
+                else if (round.includes('lose')) {
+                    cscore += 1;
+                }
+                else if (round.includes('ties')) {
+                    continue;
+                }
+                else if (round.includes('valid')) {
+                    cscore += 1;
+                }
+                console.log("Your score is " + pscore + "\n",
+                            "The computer's score is " + cscore);
+            } 
+            
         }
 
         main();
