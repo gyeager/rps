@@ -1,4 +1,7 @@
 <html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
     <script>
 
         function computerPlay () {
@@ -90,6 +93,17 @@
                             "The computer's score is " + cscore);
             } 
             
+            if (pscore > cscore) {
+                console.log("You beat the computer!");
+            }
+
+            else if (cscore == pscore) {
+                console.log("You tied with the computer.")
+            }
+
+            else {
+                console.log("You lost! To a computer!")
+            }
         }
 
         main();
